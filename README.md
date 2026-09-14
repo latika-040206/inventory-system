@@ -1,22 +1,21 @@
-# Inventory & Order Processing System (CLI)
-
+Inventory & Order Processing System (CLI)
 A pure command-line Java application designed for catalog management, stock replenishment, dynamic discount evaluation, and transactional CSV persistence.
 
----
+1. System Requirements & Environment Setup
+Prerequisites
+Java Development Kit (JDK): Version 11, 17, or later.
 
-## 1. System Requirements & Environment Setup
+Operating System: Windows, macOS, or Linux.
 
-### Prerequisites
-- **Java Development Kit (JDK):** Version 11, 17, or later.
-- **Operating System:** Windows, macOS, or Linux.
-- **Terminal:** Command Prompt (cmd), PowerShell, or Bash.
+Terminal: Command Prompt (cmd), PowerShell, or Bash.
 
-### Environment Verification
-To verify your system has the Java compiler and runtime configured properly, open your terminal and run:
+Environment Verification
+To verify your system has the Java compiler and runtime configured properly, run:
 
-```bash
 javac -version
+
 java -version
+
 If neither command is recognized, ensure your JDK bin directory is added to your system's PATH environment variable.
 
 2. Dependencies & Installation
@@ -24,7 +23,7 @@ External Libraries: None.
 
 The project relies exclusively on the standard Java Class Library (java.base, specifically java.io, java.util).
 
-No build tools (Maven/Gradle) or third-party packages are required.
+No external build tools (Maven/Gradle) or third-party packages are required.
 
 3. Configuration & Data Files
 The system uses a CSV file as its primary persistent database:
@@ -49,14 +48,17 @@ Note: The data/inventory.csv file is read at startup and automatically updated o
 
 4. Compilation & Execution Instructions
 Step 1: Open Terminal in Root Directory
-Navigate to the root directory where this README.md is located:
+Navigate to the root directory:
 cd inventory-system
+
 Step 2: Compile All Classes
 Compile all modules and source files into the out target directory:
+
 javac -d out -sourcepath src src\com\store\Main.java
 
 Step 3: Run the Application
 Execute the compiled bytecode via standard CLI:
+
 java -cp out com.store.Main
 
 5. Architecture & Object-Oriented Principles
@@ -70,7 +72,7 @@ com.store.model.Discountable: Common interface applied to items eligible for dyn
 
 Persistence Layer:
 
-com.store.service.StoreService: Manages file I/O operations (BufferedReader/BufferedWriter) to ensure ACID-like state preservation on local disk.
+com.store.service.StoreService: Manages file I/O operations (BufferedReader/BufferedWriter) to ensure state preservation on local disk.
 
 Defensive Error Handling:
 
